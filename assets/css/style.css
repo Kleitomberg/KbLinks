@@ -86,11 +86,17 @@ body *{
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    animation: slideOut 0.3s forwards;
 }
 
+#switch button:hover{
+    outline: 8px solid var(--surface-color);
+
+}
 .light #switch button{
     left: initial;
     right: 0;
+    animation: slideIn 0.3s forwards;
 }
 
 #switch span{
@@ -166,7 +172,26 @@ footer{
     font-size: 14px;
 }
 
+/* Animations */
 
+@keyframes slideIn{
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes slideOut{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+
+    }
+}
 /* Media Queries */
 
 @media screen and (min-width: 700px){
